@@ -73,7 +73,7 @@ const Hero: React.FC = () => {
           <div className="relative">
             <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden transform rotate-3 hover:rotate-0 transition-transform duration-500">
               <img
-                src="https://images.pexels.com/photos/1126728/pexels-photo-1126728.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="/photo/pt2.jpg"
                 alt="Beautiful layered cake"
                 className="w-full h-96 object-cover"
               />
