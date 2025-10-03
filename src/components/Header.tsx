@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, ShoppingCart } from 'lucide-react';
+import { useCart } from '../context/CartContext';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { getTotalItems, setIsCartOpen } = useCart();
 
   const whatsappMessage = "Hi%20Ayath_iCakes!%20%F0%9F%91%8B%0A%0A%F0%9F%8E%82%20I'd%20like%20to%20enquire%20about%20your%20delicious%20cakes!%0A%0A%E2%9C%A8%20I'm%20interested%20in:%0A%E2%80%A2%20Custom%20Design%20Cakes%20(Theme/Photo%20Cakes)%0A%E2%80%A2%20Birthday%20Cakes%20(Kids/Adults%20Special)%0A%E2%80%A2%20Wedding%20%26%20Anniversary%20Cakes%0A%E2%80%A2%20Special%20Occasion%20Cakes%0A%E2%80%A2%20Corporate%20Event%20Cakes%0A%0A%F0%9F%8E%A8%20Design%20Preferences:%0A%E2%80%A2%20Fondant/Cream%20Design%0A%E2%80%A2%20Multi-tier%20Options%0A%E2%80%A2%20Photo%20Printing%0A%E2%80%A2%20Custom%20Theme%20Creation%0A%0A%F0%9F%92%9D%20Please%20help%20me%20with:%0A%E2%80%A2%20Design%20customization%20options%0A%E2%80%A2%20Available%20sizes%20and%20servings%0A%E2%80%A2%20Price%20range%0A%E2%80%A2%20Delivery/pickup%20information%0A%0AThank%20you!%20%F0%9F%98%8A";
 
@@ -59,8 +61,20 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Phone & Order Button */}
+          {/* Cart, Phone & Order Button */}
           <div className="hidden md:flex items-center space-x-4">
+            <button
+              onClick={() => setIsCartOpen(true)}
+              className="relative flex items-center space-x-2 bg-pink-50 hover:bg-pink-100 text-pink-600 px-4 py-2 rounded-full transition-all duration-300 group"
+            >
+              <ShoppingCart className="h-4 w-4 group-hover:scale-110 transition-transform" />
+              <span className="font-medium">Cart</span>
+              {getTotalItems() > 0 && (
+                <span className="absolute -top-2 -right-2 bg-pink-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold animate-pulse">
+                  {getTotalItems()}
+                </span>
+              )}
+            </button>
             <a
               href="tel:8248477869"
               className="flex items-center space-x-2 bg-pink-50 hover:bg-pink-100 text-pink-600 px-4 py-2 rounded-full transition-all duration-300 group"
@@ -80,13 +94,26 @@ export default function Header() {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-gray-600"
-          >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          {/* Mobile Cart & Menu Button */}
+          <div className="md:hidden flex items-center space-x-2">
+            <button
+              onClick={() => setIsCartOpen(true)}
+              className="relative p-2 text-gray-600"
+            >
+              <ShoppingCart className="h-6 w-6" />
+              {getTotalItems() > 0 && (
+                <span className="absolute -top-1 -right-1 bg-pink-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold">
+                  {getTotalItems()}
+                </span>
+              )}
+            </button>
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 text-gray-600"
+            >
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}

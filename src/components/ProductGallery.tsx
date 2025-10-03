@@ -1,8 +1,21 @@
 import React, { useState } from 'react';
 import { ShoppingCart, Heart, Star, Eye, Share2, Clock, Award, Sparkles, ChefHat, Zap } from 'lucide-react';
+import { useCart } from '../context/CartContext';
 
 const ProductGallery: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState('all');
+  const { addToCart, setIsCartOpen } = useCart();
+
+  const handleAddToCart = (product: typeof products[0]) => {
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      category: product.category,
+    });
+    setIsCartOpen(true);
+  };
 
   const categories = [
     { id: 'all', name: 'All Products' },
@@ -335,9 +348,12 @@ const ProductGallery: React.FC = () => {
                   <div className="text-2xl font-bold text-pink-600">
                     {product.price}
                   </div>
-                  <button className="bg-gradient-to-r from-pink-500 to-pink-600 text-white px-6 py-3 rounded-full hover:from-pink-600 hover:to-pink-700 transition-all duration-300 font-medium flex items-center space-x-2 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                  <button
+                    onClick={() => handleAddToCart(product)}
+                    className="bg-gradient-to-r from-pink-500 to-pink-600 text-white px-6 py-3 rounded-full hover:from-pink-600 hover:to-pink-700 transition-all duration-300 font-medium flex items-center space-x-2 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                  >
                     <ShoppingCart className="h-4 w-4" />
-                    <span>Order</span>
+                    <span>Add to Cart</span>
                   </button>
                 </div>
               </div>

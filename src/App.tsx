@@ -11,6 +11,7 @@ import Contact from './components/Contact';
 import WhatsAppWidget from './components/WhatsAppWidget';
 import ScrollToTop from './components/ScrollToTop';
 import Loading from './components/Loading';
+import Cart from './components/Cart';
 
 // Add page transition wrapper
 const PageTransition = ({ children }: { children: React.ReactNode }) => {
@@ -68,6 +69,7 @@ function App() {
         <Footer />
         <WhatsAppWidget />
         <ScrollToTop />
+        <Cart />
       </div>
     </Router>
   );
