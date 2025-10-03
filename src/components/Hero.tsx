@@ -6,8 +6,8 @@ const Hero: React.FC = () => {
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-pink-50 to-rose-50 flex items-center">
       <div className="absolute inset-0 bg-gradient-to-r from-pink-400/20 to-pink-600/30"></div>
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
         style={{ backgroundImage: 'url(/BG.png)' }}
       ></div>
       

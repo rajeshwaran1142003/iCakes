@@ -146,7 +146,7 @@ const ProductGallery: React.FC = () => {
       category: 'desserts',
       price: '₹699',
       rating: 4.7,
-      image: '/product/img1.jpg',
+      image: 'https://images.pexels.com/photos/5947098/pexels-photo-5947098.jpeg?auto=compress&cs=tinysrgb&w=400',
       description: 'Fresh strawberry shortcake with whipped cream',
       preparationTime: '2-3 hours'
     },
@@ -156,7 +156,7 @@ const ProductGallery: React.FC = () => {
       category: 'desserts',
       price: '₹799',
       rating: 4.8,
-      image: '/product/img2.jpg',
+      image: 'https://images.pexels.com/photos/2067396/pexels-photo-2067396.jpeg?auto=compress&cs=tinysrgb&w=400',
       description: 'Creamy cheesecake with crushed Oreo cookies',
       preparationTime: '3-4 hours'
     },
@@ -166,7 +166,7 @@ const ProductGallery: React.FC = () => {
       category: 'cupcakes',
       price: '₹99',
       rating: 4.8,
-      image: '/product/img3.jpg',
+      image: 'https://images.pexels.com/photos/913136/pexels-photo-913136.jpeg?auto=compress&cs=tinysrgb&w=400',
       description: 'Classic red velvet cupcakes with cream cheese frosting',
       preparationTime: '1 hour'
     },
@@ -176,7 +176,7 @@ const ProductGallery: React.FC = () => {
       category: 'desserts',
       price: '₹399',
       rating: 4.9,
-      image: '/product/img4.jpg',
+      image: 'https://images.pexels.com/photos/3776945/pexels-photo-3776945.jpeg?auto=compress&cs=tinysrgb&w=400',
       description: 'French macarons in various flavors and colors',
       popular: true,
       preparationTime: '2-3 hours'
@@ -187,7 +187,7 @@ const ProductGallery: React.FC = () => {
       category: 'cookies',
       price: '₹55',
       rating: 4.7,
-      image: '/product/img5.jpg',
+      image: 'https://images.pexels.com/photos/230325/pexels-photo-230325.jpeg?auto=compress&cs=tinysrgb&w=400',
       description: 'Soft and chewy cookie dough with premium chocolate chips',
       preparationTime: '30 mins'
     },
@@ -197,7 +197,7 @@ const ProductGallery: React.FC = () => {
       category: 'seasonal',
       price: '₹1499',
       rating: 5.0,
-      image: '/product/img6.jpg',
+      image: 'https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=400',
       description: 'Festive holiday cake with seasonal decorations',
       popular: true,
       preparationTime: '4-6 hours'
